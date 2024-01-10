@@ -1,7 +1,7 @@
 package edu.course2.job4;
 
-import lombok.Getter;
-import org.springframework.context.annotation.Bean;
+import edu.course2.job4.modelclasses.Model;
+import edu.course2.job4.modelclasses.ModelStructure;
 import org.springframework.stereotype.Component;
 
 import java.io.*;

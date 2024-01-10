@@ -1,5 +1,7 @@
 package edu.course2.job4;
 
+import edu.course2.job4.modelclasses.ModelStructure;
+
 import java.sql.*;
 import java.util.List;
 
@@ -31,7 +33,7 @@ public class H2DAO {
             System.out.println(id + " | " + date2.toString() + " | " + userid + " | " + application);
         }
     }
-    public void postData(List<ModelStructure> mList,boolean clrTable) throws Exception {
+    public void postData(List<ModelStructure> mList, boolean clrTable) throws Exception {
         Statement statement=con.createStatement();
         ResultSet resultDML;
 // создание последовательности для IDшников

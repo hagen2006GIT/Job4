@@ -1,12 +1,11 @@
 package edu.course2.job4;
 
+import edu.course2.job4.modelclasses.Model;
+import edu.course2.job4.modelclasses.ModelStructure;
 import org.springframework.stereotype.Component;
 
-import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 
 
