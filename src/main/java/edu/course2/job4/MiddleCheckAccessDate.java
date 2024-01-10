@@ -1,15 +1,21 @@
 package edu.course2.job4;
 
+import edu.course2.job4.interfaces.LogTransformation;
+import edu.course2.job4.modelclasses.Model;
+import edu.course2.job4.modelclasses.ModelStructure;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-
 import java.io.IOException;
 import java.util.function.BinaryOperator;
 
 // проверка 5 - промежуточная компонента проверки даты проверяет её наличие.
 // Если дата не задана, то человек не вносится в базу, а сведения о имени файла и значения человека заносятся в отдельный лог
-@LogTransformation ("fix_access_date.log")
+@LogTransformation("fix_access_date.log")
 @Component(value="CHECK_ACCESS_DATE") public class MiddleCheckAccessDate extends MiddleComponent implements BinaryOperator<Model> {
+    @Bean public MiddleCheckAccessDate middleCheckDate() {
+        return new MiddleCheckAccessDate();
+    }
     @Override public Model apply(Model model, Model model2) {
         loggingString.append(this.getClass().getName()+"\n");
         loggingString.append("старт операции: ").append(formatter.format(new java.util.Date().getTime())+"\n");
@@ -18,9 +24,9 @@ import java.util.function.BinaryOperator;
         Util utils=context.getBean("util",Util.class);
         for(ModelStructure mod:model2.fLine) {
             if(mod.getAccess_date()==null) {
-                mod.setDataOk(false); // строку на импортирую в БД (признак - false)
+                mod.setDataOk(false); // строку не импортирую в БД (признак - false)
                 try { // и сведения по соответствующей строке в файле заношу в лог
-                    utils.data2Log("./src/test/importError.log",mod.gerFullString());
+                    utils.data2Log("./src/test/importError.log",mod.getFullString());
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }

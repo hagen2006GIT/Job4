@@ -1,5 +1,7 @@
 package edu.course2.job4;
 
+import edu.course2.job4.modelclasses.ModelStructure;
+
 import java.sql.*;
 import java.util.List;
 

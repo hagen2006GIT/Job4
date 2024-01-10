@@ -1,25 +1,10 @@
-package edu.course2.job4;
+package edu.course2.job4.modelclasses;
 
 import lombok.Getter;
 import lombok.Setter;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-public class Model {
-    List<ModelStructure> fLine;
-    public Model() {
-        this.fLine=new ArrayList<>();
-    }
-    @Override public String toString() {
-        StringBuilder str=new StringBuilder();
-        for(ModelStructure mod:this.fLine) {
-            str.append(mod.toString()).append("\n");
-        }
-        return str.toString();
-    }
-}
-@Setter @Getter class ModelStructure {
+@Setter @Getter public class ModelStructure {
     private boolean dataOk; // если true, то вносим в БД, иначе только логирование
     private String username; // логин
     private String fioF; // фамилия
@@ -28,7 +13,7 @@ public class Model {
     private Date access_date; //дата входа
     private String appl_type; //тип приложения
 
-    public String gerFullString() {
+    public String getFullString() {
         return username
                 +" "+fioF
                 +" "+fioI
@@ -51,7 +36,7 @@ public class Model {
         this.access_date=access_date;
         this.appl_type=appl_type;
         this.dataOk=true; // по умолчанию (до всех проверок) признак true. Если какая-то из проверок не проходит,
-                        // то она ставит false, чтобы эта запись не добавилась в БД (только логирование в отдельный файл)
+        // то она ставит false, чтобы эта запись не добавилась в БД (только логирование в отдельный файл)
     }
     @Override public String toString() {
         return "{" +

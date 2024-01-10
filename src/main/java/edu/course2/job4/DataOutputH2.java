@@ -1,5 +1,6 @@
 package edu.course2.job4;
 
+import edu.course2.job4.modelclasses.Model;
 import org.springframework.stereotype.Component;
 import java.sql.SQLException;
 import java.util.function.Consumer;

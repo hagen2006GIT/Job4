@@ -1,4 +1,4 @@
-package edu.course2.job4;
+package edu.course2.job4.interfaces;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

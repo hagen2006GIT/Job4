@@ -1,18 +1,17 @@
 package edu.course2.job4;
 
+import edu.course2.job4.modelclasses.Model;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
 import java.io.IOException;
-import java.security.PrivilegedAction;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.function.BinaryOperator;
 
-@Component public class MiddleComponent implements BinaryOperator <Model> {
+@Component public class MiddleComponent implements BinaryOperator<Model> {
     @Getter @Setter String logFile;
     StringBuilder loggingString=new StringBuilder();
     DateFormat formatter=new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
