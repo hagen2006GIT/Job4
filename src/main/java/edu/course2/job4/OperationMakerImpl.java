@@ -11,6 +11,7 @@ import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+
 @Component public class OperationMakerImpl implements OperationMaker {
     @Autowired Supplier<Model> datareader;
     @Autowired Map<String,Consumer<Model>> outputs=new HashMap<>();
