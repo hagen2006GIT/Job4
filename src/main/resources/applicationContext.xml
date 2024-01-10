@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="edu.course2.job4.MiddleComponent" id="Middle" init-method="init"> </bean>
+	<bean class="edu.course2.job4.MiddleFixApplType" id="FixApplType" init-method="init"> </bean>
+	<bean class="edu.course2.job4.MiddleFixFIO" id="FIX-FIO" init-method="init"> </bean>
+	<bean class="edu.course2.job4.MiddleCheckAccessDate" id="FixAccessDate" init-method="init"> </bean>
+	<bean class="edu.course2.job4.InstantiationTracingBeanPostProcessor">	</bean>
+</beans>
